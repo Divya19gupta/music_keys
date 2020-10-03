@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS Drum</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+.bgimg{
+background-image : url('bg.png');
+background-repeat: no-repeat;
+background-size: cover;
+background-color: darkgrey;
+text-align: center;
+}
+.container
+{
+    padding-top: 150px;
+   padding-bottom: 150px;
+   min-height: 100%;
+   height:100vh;
+}
+</style>
+</head>
+<body>
+    <div class="bgimg">
+        
+        <div class="container">
+        <button data-key="65" class="btn btn-large btn-dark">
+        &nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;
+        </button> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <button data-key="83" class="btn btn-large btn-dark">
+        &nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;
+        </button> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <button data-key="68" class="btn btn-large btn-dark">
+        &nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;
+        </button> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <button data-key="70" class="btn btn-large btn-dark">
+        &nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;
+        </button> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br> <br><br><br> <br><br><br> <br><br><br>
+        
+        </div>
+        <br><br><br><br><br><br> <br><br><br> <br><br><br>
+    </div>
+    <center><div style="background-color:#4c4c4c;color:#e8e8e8;"><br>J&nbsp;&nbsp;a&nbsp;&nbsp;v&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;c&nbsp;&nbsp;r&nbsp;&nbsp;i&nbsp;&nbsp;p&nbsp;&nbsp;t<br><br>Press the key name mentioned on the keyboard.<br><br></div></center>
+     <audio data-key="65" src="keys.mp3"></audio>
+     <audio data-key="83" src="keys2.mp3"></audio>
+     <audio data-key="68" src="keys3.mp3"></audio>
+     <audio data-key="70" src="keys4.mp3"></audio>  
+<script>
+  window.addEventListener('keydown',function(e)
+  {
+    var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`).play();
+    console.log(audio);
+    if(!audio)
+    return;
+   // audio.play();
+//    if (audio !== undefined) {
+//     audio.then(function() {
+//     // Automatic playback started!
+//   }).catch(function(error) {
+//     // Automatic playback failed.
+//     // Show a UI element to let the user manually start playback.
+//   });
+//    }
+    btn.classList.add('btn-secondary');
+    btn.classList.remove('btn-secondary');
+    btn.classList.toggle ('btn-secondary');
+
+  });
+</script>
+</body>
+</html>
